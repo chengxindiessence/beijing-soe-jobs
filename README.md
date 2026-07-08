@@ -20,13 +20,16 @@ beijing-soe-jobs/
 │   ├── storage.py            # 去重、合并、保存 JSON
 │   └── scrapers/             # 各数据源爬虫
 │       ├── guopin.py         # 国聘网通用搜索（API）
-│       ├── guopin_company.py # ★ 按名录逐家检索国聘网
+│       ├── guopin_company.py # 按名录逐家检索国聘网
+│       ├── mot_recruit.py    # ★ 交通运输部所属事业单位
+│       ├── nra_recruit.py    # ★ 国家铁路局/铁道事业单位
 │       ├── sasac.py          # 国资委人事专栏
 │       └── company_sites.py  # 航天/航空/石油/中铁/中车/通号/北汽/京东方等官网
 │
 ├── data/
 │   ├── job.json              # 爬虫输出的原始数据
-│   └── beijing_soe_directory.yaml  # ★ 110家在京央企/国企名录
+│   ├── beijing_soe_directory.yaml  # 110家在京央企/国企名录
+│   └── institutions_extra.yaml     # 航天/航空/交通/铁道补充名录
 │
 ├── web/
 │   ├── index.html            # ★ 招聘表格网页（浏览器打开）
@@ -153,7 +156,9 @@ filters:
 ```yaml
 sources:
   guopin: true          # 国聘网通用搜索（推荐）
-  guopin_company: true  # ★ 按110家在京央企/国企名录逐家检索
+  guopin_company: true  # 按名录逐家检索（含 institutions_extra.yaml）
+  mot_recruit: true     # ★ 交通运输部事业单位（交科院/公科院/规划院等）
+  nra_recruit: true     # ★ 国家铁路局/铁道事业单位
   sasac: true           # 国资委
   company_sites: false  # 官网HTML抓取（反爬多，默认关）
 

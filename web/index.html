@@ -267,6 +267,10 @@
         行业筛选
         <select id="filter-industry">
           <option value="">全部行业</option>
+          <option value="航天">航天</option>
+          <option value="航空">航空</option>
+          <option value="交通">交通/交通运输部</option>
+          <option value="铁路">铁路/铁道</option>
         </select>
       </label>
       <label>
@@ -441,7 +445,7 @@
 
       let list = allJobs.filter(j => {
         if (!matchMajorGroup(j, major)) return false;
-        if (industry && j.industry !== industry) return false;
+        if (industry && !(j.industry || "").includes(industry)) return false;
         if (hukou === "yes" && !j.hukou) return false;
         if (hukou === "no" && j.hukou) return false;
         if (favOnly === "yes" && !favorites.has(j.id)) return false;

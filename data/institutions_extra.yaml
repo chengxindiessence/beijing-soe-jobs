@@ -1,0 +1,180 @@
+# ============================================================
+# 航天/航空/交通/铁道 补充名录（在京单位及检索词）
+# 合并进企业专搜，与国聘网关键词互补
+# ============================================================
+
+enterprises:
+  # ---------- 中国航天科技集团下属（在京） ----------
+  - name: 中国运载火箭技术研究院
+    category: 央企
+    industry: 航天
+    search_keywords: ["运载火箭", "航天一院", "中国航天"]
+
+  - name: 中国空间技术研究院
+    category: 央企
+    industry: 航天
+    search_keywords: ["空间技术研究院", "航天五院", "中国航天"]
+
+  - name: 航天动力技术研究院
+    category: 央企
+    industry: 航天
+    search_keywords: ["航天四院", "航天动力", "中国航天"]
+
+  - name: 中国航天系统科学与工程研究院
+    category: 央企
+    industry: 航天
+    search_keywords: ["航天系统科学", "中国航天"]
+
+  - name: 中国卫通集团
+    category: 央企
+    industry: 航天
+    search_keywords: ["中国卫通", "中国航天"]
+
+  - name: 中国乐凯集团
+    category: 央企
+    industry: 航天
+    search_keywords: ["中国乐凯", "乐凯", "中国航天"]
+
+  - name: 航天科技集团
+    category: 央企
+    industry: 航天
+    search_keywords: ["中国航天", "航天科技集团", "spacetalent"]
+
+  # ---------- 中国航天科工集团下属（在京） ----------
+  - name: 中国航天科工集团
+    category: 央企
+    industry: 航天
+    search_keywords: ["航天科工", "中国航天科工", "航天科工集团"]
+
+  - name: 北京航天测控技术有限公司
+    category: 央企
+    industry: 航天
+    search_keywords: ["航天测控", "航天科工"]
+
+  - name: 北京无线电测量研究所
+    category: 央企
+    industry: 航天
+    search_keywords: ["无线电测量", "航天科工"]
+
+  # ---------- 中国航空工业集团下属（在京） ----------
+  - name: 中国航空工业集团
+    category: 央企
+    industry: 航空
+    search_keywords: ["航空工业集团", "中国航空", "中航工业"]
+
+  - name: 中国航空制造技术研究院
+    category: 央企
+    industry: 航空
+    search_keywords: ["航空制造技术", "中国航空"]
+
+  - name: 中国飞机强度研究所
+    category: 央企
+    industry: 航空
+    search_keywords: ["飞机强度", "中国航空"]
+
+  - name: 中国民航科学技术研究院
+    category: 央企
+    industry: 航空
+    search_keywords: ["民航科学", "中国民航"]
+
+  - name: 中国航发北京公司
+    category: 央企
+    industry: 航空
+    search_keywords: ["中国航发", "航空发动机"]
+
+  # ---------- 交通运输部下属事业单位（在京） ----------
+  - name: 交通运输部规划研究院
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["交通运输部规划", "交规院"]
+
+  - name: 交通运输部科学研究院
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["交通运输部科学", "交科院"]
+
+  - name: 交通运输部公路科学研究院
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["公路科学", "交通运输部公路"]
+
+  - name: 交通运输部水运科学研究院
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["水运科学", "交通运输部水运"]
+
+  - name: 中国交通通信信息中心
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["交通通信", "中国交通通信"]
+
+  - name: 交通运输部管理干部学院
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["管理干部学院", "交通运输部管理"]
+
+  - name: 交通运输部救助打捞局
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["救助打捞", "交通运输部救助"]
+
+  - name: 中国国际可持续交通创新和知识中心
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["可持续交通", "交通运输部"]
+
+  - name: 交通运输部职业资格中心
+    category: 事业单位
+    industry: 交通
+    search_keywords: ["职业资格中心", "交通运输部"]
+
+  # ---------- 国家铁路局 / 铁道系统事业单位（在京） ----------
+  - name: 国家铁路局
+    category: 事业单位
+    industry: 铁路
+    search_keywords: ["国家铁路局"]
+
+  - name: 国家铁路局信息中心
+    category: 事业单位
+    industry: 铁路
+    search_keywords: ["国家铁路局信息"]
+
+  - name: 国家铁路局规划与标准研究院
+    category: 事业单位
+    industry: 铁路
+    search_keywords: ["铁路局规划", "国家铁路局"]
+
+  - name: 中国铁道科学研究院
+    category: 央企
+    industry: 铁路
+    search_keywords: ["铁科院", "铁道科学研究院", "中国铁路"]
+
+  - name: 中国铁路北京局集团
+    category: 央企
+    industry: 铁路
+    search_keywords: ["中国铁路", "北京局", "铁路北京"]
+
+  - name: 中铁设计集团
+    category: 央企
+    industry: 铁路
+    search_keywords: ["中铁设计", "中国铁路"]
+
+  - name: 中铁电气化局
+    category: 央企
+    industry: 铁路
+    search_keywords: ["中铁电气化", "中国铁路"]
+
+  - name: 中铁建工集团
+    category: 央企
+    industry: 铁路
+    search_keywords: ["中铁建工", "中国铁路"]
+
+  - name: 中国铁道出版社
+    category: 事业单位
+    industry: 铁路
+    search_keywords: ["铁道出版社", "中国铁路"]
+
+  - name: 中国铁路专运中心
+    category: 事业单位
+    industry: 铁路
+    search_keywords: ["铁路专运", "中国铁路"]

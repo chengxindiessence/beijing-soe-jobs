@@ -66,6 +66,8 @@ class JobFilter:
 
     def education_ok(self, text: str) -> bool:
         allowed = self.cfg.get("education", ["本科", "硕士", "不限"])
+        if "详见公告" in text:
+            return True
         if "不限" in allowed and ("不限" in text or not text.strip()):
             return True
         return self._match_any(text, allowed)
@@ -83,7 +85,11 @@ class JobFilter:
         if self.require_campus and not job.is_campus:
             campus_markers = ["校招", "校园", "应届", "27届", "2027"]
             if not self._match_any(text, campus_markers):
-                return False
+                # 事业单位统招公告：含「事业单位」标签且学历为统招层次时保留
+                if "事业单位" in job.tags and self.education_ok(job.education + text):
+                    pass
+                else:
+                    return False
 
         if not self.has_beijing(text):
             return False

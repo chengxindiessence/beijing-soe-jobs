@@ -15,17 +15,17 @@ enterprises:
   - name: 中国航天科技集团
     category: 央企
     industry: 航天
-    search_keywords: ["航天科技", "中国航天科技"]
+    search_keywords: ["中国航天", "航天科技", "航天科技集团"]
 
   - name: 中国航天科工集团
     category: 央企
     industry: 航天
-    search_keywords: ["航天科工", "中国航天科工"]
+    search_keywords: ["航天科工", "中国航天科工", "航天科工集团"]
 
   - name: 中国航空工业集团
     category: 央企
     industry: 航空
-    search_keywords: ["航空工业", "中航工业"]
+    search_keywords: ["航空工业集团", "中国航空", "中航工业"]
 
   - name: 中国兵器工业集团
     category: 央企

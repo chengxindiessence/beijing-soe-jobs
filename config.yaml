@@ -85,6 +85,12 @@ filters:
     - 铁路
     - 储备粮
     - 烟草
+    - 交通运输部
+    - 交通部
+    - 国家铁路局
+    - 铁道
+    - 事业单位
+    - 铁科院
 
   # 北京重点国企（额外白名单，公司名匹配即保留）
   beijing_soe_companies:
@@ -124,9 +130,11 @@ crawler:
 # 数据来源开关
 sources:
   guopin: true              # 国聘网通用搜索（主数据源）
-  guopin_company: true      # ★ 按在京央企/国企名录逐家检索（推荐开启）
+  guopin_company: true      # 按在京央企/国企名录逐家检索
+  mot_recruit: true         # ★ 交通运输部所属事业单位
+  nra_recruit: true         # ★ 国家铁路局/铁道事业单位
   sasac: true               # 国资委人事专栏
-  company_sites: false      # 各央企官网（反爬多，默认关闭，可手动开启）
+  company_sites: false      # 各央企官网（反爬多，默认关闭）
 
 # 国聘网搜索关键词（会逐个搜索并合并去重）
 # 空字符串表示不限关键词，抓取北京全部校招岗
@@ -138,6 +146,15 @@ guopin_keywords:
   - "应届生"
   - "管培"
   - "工商管理"
+  - "中国航天"
+  - "航天科工"
+  - "航空工业"
+  - "中国航空"
+  - "中国航发"
+  - "交通运输部"
+  - "国家铁路局"
+  - "铁科院"
+  - "中国铁路"
 
 # 企业专搜配置（data/beijing_soe_directory.yaml 名录驱动）
 guopin_company:
