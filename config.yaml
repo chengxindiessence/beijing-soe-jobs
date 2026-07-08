@@ -1,0 +1,192 @@
+# ============================================================
+# 北京央国企27届校招爬虫 - 筛选规则配置
+# 修改本文件后，重新运行 python main.py 即可生效
+# ============================================================
+
+filters:
+  # 工作地关键词（岗位描述/地点中包含即保留）
+  locations:
+    - 北京
+    - 北京市
+
+  # 届别关键词（标题或描述中匹配任一即可）
+  graduate_years:
+    - "27届"
+    - "2027届"
+    - "2027"
+    - "27"
+
+  # 允许的学历（匹配 education 字段或描述）
+  education:
+    - 本科
+    - 硕士
+    - 不限
+    - 大专  # 如不想看大专岗，删除此行
+
+  # 排除关键词（标题/公司/描述中出现则丢弃）
+  exclude_keywords:
+    - 社招
+    - 社会招聘
+    - 外包
+    - 劳务派遣
+    - 劳务
+    - 外包岗
+    - 实习转外包
+
+  # 排除外地城市（出现则丢弃，即使写了北京）
+  exclude_locations:
+    - 上海
+    - 广州
+    - 深圳
+    - 杭州
+    - 成都
+    - 武汉
+    - 西安
+    - 南京
+    - 天津
+    - 重庆
+    - 海外
+    - 国外
+
+  # 央企/国企识别关键词（公司名匹配任一即可）
+  soe_keywords:
+    - 中国
+    - 中央
+    - 国有
+    - 国资
+    - 中铁
+    - 中车
+    - 中航
+    - 航天
+    - 航空
+    - 石油
+    - 通号
+    - 北汽
+    - 京东方
+    - 国网
+    - 中电
+    - 中核
+    - 中广核
+    - 华润
+    - 招商
+    - 保利
+    - 中化
+    - 中建
+    - 中交
+    - 兵器
+    - 船舶
+    - 五矿
+    - 中信
+    - 国电
+    - 华能
+    - 大唐
+    - 国家能源
+    - 邮政
+    - 铁路
+    - 储备粮
+    - 烟草
+
+  # 北京重点国企（额外白名单，公司名匹配即保留）
+  beijing_soe_companies:
+    - 北汽
+    - 京东方
+    - 北京公交
+    - 北京地铁
+    - 首发集团
+    - 北控
+    - 北京城建
+    - 北京电控
+    - 北京银行
+    - 北京能源
+
+  # 落户标签识别关键词
+  hukou_keywords:
+    - 落户
+    - 北京户口
+    - 京户
+    - 解决户口
+    - 户口指标
+
+  # 是否严格模式：true=必须同时满足届别+北京+国企；false=宽松匹配
+  strict_mode: false
+
+  # 是否要求明确标注校招
+  require_campus: true
+
+# 爬虫行为
+crawler:
+  request_delay: 1.2        # 请求间隔（秒），避免被封
+  max_pages_per_source: 10  # 国聘通用搜索最多翻页数
+  max_pages_company: 3      # 企业专搜每个关键词最多翻页数
+  timeout: 30               # 请求超时（秒）
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+
+# 数据来源开关
+sources:
+  guopin: true              # 国聘网通用搜索（主数据源）
+  guopin_company: true      # ★ 按在京央企/国企名录逐家检索（推荐开启）
+  sasac: true               # 国资委人事专栏
+  company_sites: false      # 各央企官网（反爬多，默认关闭，可手动开启）
+
+# 国聘网搜索关键词（会逐个搜索并合并去重）
+# 空字符串表示不限关键词，抓取北京全部校招岗
+guopin_keywords:
+  - ""
+  - "2027"
+  - "27届"
+  - "2027届"
+  - "应届生"
+  - "管培"
+  - "工商管理"
+
+# 企业专搜配置（data/beijing_soe_directory.yaml 名录驱动）
+guopin_company:
+  use_all_keywords: false   # true=每家用全部关键词，更全但更慢
+company_sites:
+  - name: 中国航天科技集团
+    url: https://www.spacetalent.com.cn/zhiwei.html
+    industry: 航天
+    link_selector: "a"
+    title_must_contain: ["招聘", "校招", "2027", "27", "北京"]
+
+  - name: 中国航空工业集团
+    url: https://www.avic.com.cn/xwzx/zhxw/
+    industry: 航空
+    link_selector: "a"
+    title_must_contain: ["招聘", "校招", "2027"]
+
+  - name: 中国石油
+    url: https://zhaopin.cnpc.com.cn/web/recruitInf/list.html?workPlace=110000
+    industry: 石油
+    link_selector: "a"
+    title_must_contain: ["招聘", "校招", "2027", "北京"]
+
+  - name: 中国中铁
+    url: https://www.crcc.cn/xxzx/gsgg/
+    industry: 基建
+    link_selector: "a"
+    title_must_contain: ["招聘", "校招", "2027"]
+
+  - name: 中国中车
+    url: https://www.crrcgc.cc/xwzx/zhxw/
+    industry: 轨道交通
+    link_selector: "a"
+    title_must_contain: ["招聘", "校招", "2027"]
+
+  - name: 中国通号
+    url: https://www.crsc.cn/xwzx/gsgg/
+    industry: 轨道交通
+    link_selector: "a"
+    title_must_contain: ["招聘", "校招", "2027"]
+
+  - name: 北汽集团
+    url: https://www.baicgroup.com.cn/news.html
+    industry: 汽车
+    link_selector: "a"
+    title_must_contain: ["招聘", "校招", "2027", "27"]
+
+  - name: 京东方
+    url: https://career.boe.com/campus
+    industry: 电子
+    link_selector: "a"
+    title_must_contain: ["2027", "27", "校招", "北京"]

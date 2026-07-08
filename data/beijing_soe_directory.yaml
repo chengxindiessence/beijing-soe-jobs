@@ -1,0 +1,568 @@
+# ============================================================
+# 在京央企 & 北京市属国企名录
+# 数据来源：国务院国资委央企名录(2025)、北京市国资委
+# 约71家央企总部在北京 + 北京市属重点国企
+# search_keywords 用于国聘网按企业名检索校招岗位
+# ============================================================
+
+enterprises:
+  # ---------- 央企总部在京（军工/航天） ----------
+  - name: 中国核工业集团
+    category: 央企
+    industry: 能源/核工业
+    search_keywords: ["中核", "中国核工业"]
+
+  - name: 中国航天科技集团
+    category: 央企
+    industry: 航天
+    search_keywords: ["航天科技", "中国航天科技"]
+
+  - name: 中国航天科工集团
+    category: 央企
+    industry: 航天
+    search_keywords: ["航天科工", "中国航天科工"]
+
+  - name: 中国航空工业集团
+    category: 央企
+    industry: 航空
+    search_keywords: ["航空工业", "中航工业"]
+
+  - name: 中国兵器工业集团
+    category: 央企
+    industry: 军工
+    search_keywords: ["兵器工业", "中国兵器"]
+
+  - name: 中国兵器装备集团
+    category: 央企
+    industry: 军工
+    search_keywords: ["兵器装备"]
+
+  - name: 中国电子科技集团
+    category: 央企
+    industry: 电子/军工
+    search_keywords: ["中国电科", "中电科"]
+
+  - name: 中国航空发动机集团
+    category: 央企
+    industry: 航空
+    search_keywords: ["中国航发", "航空发动机"]
+
+  - name: 中国融通资产管理集团
+    category: 央企
+    industry: 资产管理
+    search_keywords: ["中国融通"]
+
+  # ---------- 能源/石油 ----------
+  - name: 中国石油天然气集团
+    category: 央企
+    industry: 石油
+    search_keywords: ["中石油", "中国石油天然气"]
+
+  - name: 中国石油化工集团
+    category: 央企
+    industry: 石油
+    search_keywords: ["中石化", "中国石油化工"]
+
+  - name: 中国海洋石油集团
+    category: 央企
+    industry: 石油
+    search_keywords: ["中海油", "中国海洋石油"]
+
+  - name: 国家石油天然气管网集团
+    category: 央企
+    industry: 石油
+    search_keywords: ["国家管网", "石油天然气管网"]
+
+  - name: 国家电网
+    category: 央企
+    industry: 能源
+    search_keywords: ["国家电网", "国网北京"]
+
+  - name: 中国华能集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["中国华能", "华能集团"]
+
+  - name: 中国大唐集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["中国大唐", "大唐集团"]
+
+  - name: 中国华电集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["中国华电", "华电集团"]
+
+  - name: 国家电力投资集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["国家电投", "国家电力投资"]
+
+  - name: 中国长江三峡集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["长江三峡", "三峡集团"]
+
+  - name: 中国雅江集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["中国雅江"]
+
+  - name: 国家能源投资集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["国家能源", "神华"]
+
+  # ---------- 通信/电子信息 ----------
+  - name: 中国电信集团
+    category: 央企
+    industry: 通信
+    search_keywords: ["中国电信"]
+
+  - name: 中国联合网络通信集团
+    category: 央企
+    industry: 通信
+    search_keywords: ["中国联通"]
+
+  - name: 中国移动通信集团
+    category: 央企
+    industry: 通信
+    search_keywords: ["中国移动"]
+
+  # ---------- 制造/装备 ----------
+  - name: 中国第一汽车集团
+    category: 央企
+    industry: 汽车
+    search_keywords: ["中国一汽", "一汽集团"]
+
+  - name: 中国一重集团
+    category: 央企
+    industry: 装备制造
+    search_keywords: ["中国一重"]
+
+  - name: 中国机械工业集团
+    category: 央企
+    industry: 装备制造
+    search_keywords: ["国机集团", "中国机械工业"]
+
+  - name: 中国机械科学研究总院集团
+    category: 央企
+    industry: 科研
+    search_keywords: ["机械科学研究总院", "机科院"]
+
+  - name: 中国钢研科技集团
+    category: 央企
+    industry: 科研
+    search_keywords: ["中国钢研", "钢研科技"]
+
+  - name: 中国化学工程集团
+    category: 央企
+    industry: 化工
+    search_keywords: ["中国化学工程", "中国化学"]
+
+  - name: 中国建材集团
+    category: 央企
+    industry: 建材
+    search_keywords: ["中国建材"]
+
+  - name: 中国有色矿业集团
+    category: 央企
+    industry: 矿业
+    search_keywords: ["中国有色"]
+
+  - name: 中国稀土集团
+    category: 央企
+    industry: 矿业
+    search_keywords: ["中国稀土"]
+
+  - name: 中国有研科技集团
+    category: 央企
+    industry: 科研
+    search_keywords: ["有研科技", "中国有研"]
+
+  - name: 矿冶科技集团
+    category: 央企
+    industry: 科研
+    search_keywords: ["矿冶科技"]
+
+  - name: 中国国际技术智力合作集团
+    category: 央企
+    industry: 人力资源
+    search_keywords: ["中智", "国际技术智力"]
+
+  # ---------- 建筑/基建 ----------
+  - name: 中国建筑集团
+    category: 央企
+    industry: 基建
+    search_keywords: ["中国建筑", "中建"]
+
+  - name: 中国中铁
+    category: 央企
+    industry: 基建
+    search_keywords: ["中国中铁", "中铁"]
+
+  - name: 中国铁建
+    category: 央企
+    industry: 基建
+    search_keywords: ["中国铁建", "铁建"]
+
+  - name: 中国交通建设集团
+    category: 央企
+    industry: 基建
+    search_keywords: ["中国交建", "中交"]
+
+  - name: 中国电力建设集团
+    category: 央企
+    industry: 基建
+    search_keywords: ["中国电建", "中电建"]
+
+  - name: 中国能源建设集团
+    category: 央企
+    industry: 基建
+    search_keywords: ["中国能建", "中能建"]
+
+  - name: 中国安能建设集团
+    category: 央企
+    industry: 基建
+    search_keywords: ["中国安能"]
+
+  # ---------- 金融/投资 ----------
+  - name: 中国诚通控股
+    category: 央企
+    industry: 投资
+    search_keywords: ["中国诚通"]
+
+  - name: 中国国新控股
+    category: 央企
+    industry: 投资
+    search_keywords: ["中国国新"]
+
+  - name: 中国保利集团
+    category: 央企
+    industry: 综合
+    search_keywords: ["中国保利", "保利集团"]
+
+  - name: 中国中信集团
+    category: 央企
+    industry: 金融
+    search_keywords: ["中信集团", "中国中信"]
+
+  - name: 中国光大集团
+    category: 央企
+    industry: 金融
+    search_keywords: ["光大集团", "中国光大"]
+
+  - name: 中国投资有限责任公司
+    category: 央企
+    industry: 金融
+    search_keywords: ["中投公司"]
+
+  - name: 国家开发银行
+    category: 央企
+    industry: 金融
+    search_keywords: ["国家开发银行", "国开行"]
+
+  - name: 中国进出口银行
+    category: 央企
+    industry: 金融
+    search_keywords: ["进出口银行", "口行"]
+
+  - name: 中国农业发展银行
+    category: 央企
+    industry: 金融
+    search_keywords: ["农业发展银行", "农发行"]
+
+  # ---------- 交通/物流 ----------
+  - name: 中国国家铁路集团
+    category: 央企
+    industry: 铁路
+    search_keywords: ["国铁集团", "中国铁路", "铁路北京"]
+
+  - name: 中国邮政集团
+    category: 央企
+    industry: 邮政
+    search_keywords: ["中国邮政", "邮政北京"]
+
+  - name: 中国物流集团
+    category: 央企
+    industry: 物流
+    search_keywords: ["中国物流"]
+
+  # ---------- 航空/运输 ----------
+  - name: 中国航空集团
+    category: 央企
+    industry: 航空
+    search_keywords: ["中国航空", "国航"]
+
+  - name: 中国南方航空集团
+    category: 央企
+    industry: 航空
+    search_keywords: ["南方航空", "南航"]
+
+  # ---------- 化工/农业 ----------
+  - name: 中国中化控股
+    category: 央企
+    industry: 化工
+    search_keywords: ["中国中化", "中化集团"]
+
+  - name: 中国中煤能源集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["中煤能源", "中国中煤"]
+
+  - name: 中国煤炭科工集团
+    category: 央企
+    industry: 能源
+    search_keywords: ["煤炭科工"]
+
+  - name: 中国储备粮管理集团
+    category: 央企
+    industry: 农业
+    search_keywords: ["中储粮", "储备粮"]
+
+  - name: 中国林业集团
+    category: 央企
+    industry: 农业
+    search_keywords: ["中国林业"]
+
+  # ---------- 文化/旅游/其他 ----------
+  - name: 中国五矿集团
+    category: 央企
+    industry: 矿业
+    search_keywords: ["中国五矿", "五矿集团"]
+
+  - name: 中国铝业集团
+    category: 央企
+    industry: 矿业
+    search_keywords: ["中国铝业", "中铝"]
+
+  - name: 中国黄金集团
+    category: 央企
+    industry: 矿业
+    search_keywords: ["中国黄金"]
+
+  - name: 中国节能环保集团
+    category: 央企
+    industry: 环保
+    search_keywords: ["中国节能", "节能环保"]
+
+  - name: 中国医药集团
+    category: 央企
+    industry: 医药
+    search_keywords: ["国药集团", "中国医药"]
+
+  - name: 中国中车集团
+    category: 央企
+    industry: 轨道交通
+    search_keywords: ["中国中车", "中车"]
+
+  - name: 中国铁路通信信号集团
+    category: 央企
+    industry: 轨道交通
+    search_keywords: ["中国通号", "通号集团"]
+
+  - name: 中国检验认证集团
+    category: 央企
+    industry: 检验
+    search_keywords: ["中检集团", "检验认证"]
+
+  - name: 中国电气装备集团
+    category: 央企
+    industry: 电气
+    search_keywords: ["中国电气装备"]
+
+  - name: 中国卫星网络集团
+    category: 央企
+    industry: 航天
+    search_keywords: ["中国星网", "卫星网络"]
+
+  - name: 中国矿产资源集团
+    category: 央企
+    industry: 矿业
+    search_keywords: ["中国矿产资源"]
+
+  - name: 中国南水北调集团
+    category: 央企
+    industry: 水利
+    search_keywords: ["南水北调"]
+
+  - name: 中国烟草总公司
+    category: 央企
+    industry: 烟草
+    search_keywords: ["中国烟草"]
+
+  - name: 北大荒农垦集团
+    category: 央企
+    industry: 农业
+    search_keywords: ["北大荒"]
+
+  - name: 中国中丝集团
+    category: 央企
+    industry: 贸易
+    search_keywords: ["中国中丝"]
+
+  - name: 中国建研院
+    category: 央企
+    industry: 科研
+    search_keywords: ["中国建研院", "建筑科学研究院"]
+
+  - name: 中国中轻集团
+    category: 央企
+    industry: 轻工
+    search_keywords: ["中国中轻"]
+
+  - name: 中国普天
+    category: 央企
+    industry: 通信
+    search_keywords: ["中国普天"]
+
+  - name: 中国农发集团
+    category: 央企
+    industry: 农业
+    search_keywords: ["中国农发", "农业发展集团"]
+
+  - name: 中国盐业集团
+    category: 央企
+    industry: 化工
+    search_keywords: ["中盐集团", "中国盐业"]
+
+  # ---------- 北京市属国企 ----------
+  - name: 首钢集团
+    category: 北京市属
+    industry: 钢铁
+    search_keywords: ["首钢"]
+
+  - name: 北京公共交通控股集团
+    category: 北京市属
+    industry: 交通
+    search_keywords: ["北京公交", "公交集团"]
+
+  - name: 北京控股集团
+    category: 北京市属
+    industry: 综合
+    search_keywords: ["北控", "北京控股"]
+
+  - name: 北京能源集团
+    category: 北京市属
+    industry: 能源
+    search_keywords: ["京能", "北京能源"]
+
+  - name: 北京银行
+    category: 北京市属
+    industry: 金融
+    search_keywords: ["北京银行"]
+
+  - name: 北京京城机电
+    category: 北京市属
+    industry: 装备制造
+    search_keywords: ["京城机电"]
+
+  - name: 北京金隅集团
+    category: 北京市属
+    industry: 建材
+    search_keywords: ["金隅集团", "北京金隅"]
+
+  - name: 北京首都开发控股
+    category: 北京市属
+    industry: 房地产
+    search_keywords: ["首开", "首都开发"]
+
+  - name: 北京北辰实业集团
+    category: 北京市属
+    industry: 房地产
+    search_keywords: ["北辰实业", "北京北辰"]
+
+  - name: 北京城建集团
+    category: 北京市属
+    industry: 基建
+    search_keywords: ["北京城建"]
+
+  - name: 北京电控
+    category: 北京市属
+    industry: 电子
+    search_keywords: ["北京电控"]
+
+  - name: 北汽集团
+    category: 北京市属
+    industry: 汽车
+    search_keywords: ["北汽", "北汽集团"]
+
+  - name: 京东方
+    category: 北京市属
+    industry: 电子
+    search_keywords: ["京东方", "BOE"]
+
+  - name: 中关村发展集团
+    category: 北京市属
+    industry: 科技园区
+    search_keywords: ["中关村发展", "中关发展"]
+
+  - name: 北京水务投资中心
+    category: 北京市属
+    industry: 水务
+    search_keywords: ["北京水务"]
+
+  - name: 北京保障房中心
+    category: 北京市属
+    industry: 房地产
+    search_keywords: ["保障房中心"]
+
+  - name: 北京国际信托
+    category: 北京市属
+    industry: 金融
+    search_keywords: ["北京信托"]
+
+  - name: 北京城乡商业集团
+    category: 北京市属
+    industry: 商业
+    search_keywords: ["北京城乡"]
+
+  - name: 北京一轻控股
+    category: 北京市属
+    industry: 轻工
+    search_keywords: ["一轻控股", "北京一轻"]
+
+  - name: 北京时尚控股
+    category: 北京市属
+    industry: 纺织
+    search_keywords: ["时尚控股"]
+
+  - name: 首汽集团
+    category: 北京市属
+    industry: 交通
+    search_keywords: ["首汽", "首汽集团"]
+
+  - name: 首农食品集团
+    category: 北京市属
+    industry: 食品
+    search_keywords: ["首农", "首农食品"]
+
+  - name: 北京建工集团
+    category: 北京市属
+    industry: 基建
+    search_keywords: ["北京建工"]
+
+  - name: 北京市建筑设计研究院
+    category: 北京市属
+    industry: 建筑设计
+    search_keywords: ["北建院", "北京建院"]
+
+  - name: 北京地铁
+    category: 北京市属
+    industry: 交通
+    search_keywords: ["北京地铁", "京投"]
+
+  - name: 北京首发集团
+    category: 北京市属
+    industry: 交通
+    search_keywords: ["首发集团", "北京首发"]
+
+  - name: 华润集团
+    category: 央企
+    industry: 综合
+    search_keywords: ["华润"]
+
+  - name: 招商局集团
+    category: 央企
+    industry: 综合
+    search_keywords: ["招商局"]

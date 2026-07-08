@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>北京央国企27届校招 · 每日更新</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1a1a2e;
+      --muted: #64748b;
+      --primary: #1e40af;
+      --primary-light: #dbeafe;
+      --warn-bg: #fef9c3;
+      --warn-border: #facc15;
+      --hukou-bg: #dcfce7;
+      --hukou-text: #166534;
+      --fav: #f59e0b;
+      --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+      color: #fff;
+      padding: 2rem 1.5rem 2.5rem;
+    }
+
+    .header-inner { max-width: 1280px; margin: 0 auto; }
+
+    header h1 { font-size: 1.75rem; font-weight: 700; }
+    header p { margin-top: 0.5rem; opacity: 0.9; font-size: 0.95rem; }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      border-radius: 10px;
+      padding: 0.75rem 1.25rem;
+      min-width: 110px;
+    }
+
+    .stat-card .num { font-size: 1.5rem; font-weight: 700; }
+    .stat-card .label { font-size: 0.8rem; opacity: 0.85; }
+
+    main {
+      max-width: 1280px;
+      margin: -1.5rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .toolbar {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    .toolbar label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .toolbar select,
+    .toolbar input[type="search"] {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      min-width: 130px;
+    }
+
+    .toolbar input[type="search"] { min-width: 180px; flex: 1; }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      width: 100%;
+      margin-top: 0.25rem;
+    }
+
+    .legend span { display: inline-flex; align-items: center; gap: 0.35rem; }
+
+    .dot {
+      width: 12px; height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .dot-new { background: var(--warn-bg); border: 1px solid var(--warn-border); }
+    .dot-hukou { background: var(--hukou-bg); border: 1px solid #86efac; }
+    .dot-fav { background: #fef3c7; border: 1px solid var(--fav); }
+
+    .table-wrap {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+
+    thead {
+      background: #f8fafc;
+      border-bottom: 2px solid var(--border);
+    }
+
+    th {
+      text-align: left;
+      padding: 0.75rem 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f8fafc; }
+    tr.row-new td { background: var(--warn-bg); }
+    tr.row-new:hover td { background: #fef08a; }
+    tr.row-fav td:first-child { box-shadow: inset 3px 0 0 var(--fav); }
+
+    .company { font-weight: 600; }
+    .title a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    .title a:hover { text-decoration: underline; }
+
+    .majors {
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-width: 160px;
+      line-height: 1.4;
+    }
+
+    .btn-fav {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.25rem;
+      line-height: 1;
+      padding: 0.15rem;
+      color: #cbd5e1;
+      transition: color 0.15s, transform 0.15s;
+    }
+
+    .btn-fav:hover { transform: scale(1.15); color: var(--fav); }
+    .btn-fav.active { color: var(--fav); }
+
+    .tag {
+      display: inline-block;
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      margin: 0.08rem 0.12rem 0.08rem 0;
+    }
+
+    .tag-industry { background: var(--primary-light); color: var(--primary); }
+    .tag-hukou { background: var(--hukou-bg); color: var(--hukou-text); font-weight: 600; }
+    .tag-new { background: var(--warn-border); color: #713f12; font-weight: 600; }
+    .tag-source { background: #f1f5f9; color: var(--muted); }
+    .tag-major { background: #ede9fe; color: #5b21b6; }
+
+    .empty, .error, .loading {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--muted);
+    }
+
+    .error { color: #dc2626; }
+    .deadline-soon { color: #dc2626; font-weight: 600; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .table-wrap { overflow-x: auto; }
+      table { min-width: 960px; }
+      header h1 { font-size: 1.35rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>北京央国企 · 27届校招追踪</h1>
+      <p>100+在京央企/国企名录专搜 · 专业筛选 · 收藏职位 · 每日自动更新</p>
+      <div class="stats">
+        <div class="stat-card">
+          <div class="num" id="stat-total">-</div>
+          <div class="label">在招岗位</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-new">-</div>
+          <div class="label">今日新增</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-fav">-</div>
+          <div class="label">我的收藏</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-hukou">-</div>
+          <div class="label">落户相关</div>
+        </div>
+        <div class="stat-card">
+          <div class="num" id="stat-updated" style="font-size:1rem;">-</div>
+          <div class="label">最后更新</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <label>
+        专业筛选
+        <select id="filter-major">
+          <option value="">全部专业</option>
+          <option value="工商管理">工商管理/经济/金融</option>
+          <option value="计算机">计算机/软件/信息</option>
+          <option value="机械">机械/机电/车辆</option>
+          <option value="电气">电气/电力/能源</option>
+          <option value="土木">土木/建筑/工程</option>
+          <option value="法律">法律/法学</option>
+          <option value="医学">医学/生物/药学</option>
+          <option value="文史">中文/新闻/马克思</option>
+        </select>
+      </label>
+      <label>
+        行业筛选
+        <select id="filter-industry">
+          <option value="">全部行业</option>
+        </select>
+      </label>
+      <label>
+        落户
+        <select id="filter-hukou">
+          <option value="">全部</option>
+          <option value="yes">仅落户</option>
+          <option value="no">非落户</option>
+        </select>
+      </label>
+      <label>
+        收藏
+        <select id="filter-fav">
+          <option value="">全部岗位</option>
+          <option value="yes">仅收藏</option>
+        </select>
+      </label>
+      <label>
+        排序
+        <select id="sort-by">
+          <option value="deadline-asc">截止日期 ↑ 最近</option>
+          <option value="deadline-desc">截止日期 ↓ 最远</option>
+          <option value="new-first">今日新增优先</option>
+          <option value="company">按公司名</option>
+        </select>
+      </label>
+      <input type="search" id="search" placeholder="搜索公司、岗位、专业..." />
+      <div class="legend">
+        <span><i class="dot dot-new"></i> 今日新增</span>
+        <span><i class="dot dot-hukou"></i> 落户</span>
+        <span><i class="dot dot-fav"></i> 已收藏</span>
+        <span style="margin-left:auto;">收藏保存在浏览器本地，清除缓存会丢失</span>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <div id="status" class="loading">正在加载 job.json ...</div>
+      <table id="job-table" style="display:none;">
+        <thead>
+          <tr>
+            <th style="width:40px;">收藏</th>
+            <th>公司</th>
+            <th>岗位</th>
+            <th>专业要求</th>
+            <th>行业</th>
+            <th>学历</th>
+            <th>地点</th>
+            <th>截止日期</th>
+            <th>来源</th>
+            <th>标签</th>
+          </tr>
+        </thead>
+        <tbody id="job-body"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    数据来自国聘网（含100+在京央企/国企名录专搜）· 每日自动更新 · 仅供参考，以官方公告为准
+  </footer>
+
+  <script>
+    const FAV_KEY = "beijing-soe-job-favorites";
+    const today = new Date().toISOString().slice(0, 10);
+
+    const MAJOR_GROUPS = {
+      "工商管理": ["工商管理", "管理学", "经济学", "金融", "会计", "财务", "市场", "营销", "人力资源", "审计", "税务", "财政", "贸易", "物流管理", "公共管理"],
+      "计算机": ["计算机", "软件", "信息", "人工智能", "数据", "网络", "物联网", "电子信息", "自动化", "通信"],
+      "机械": ["机械", "机电", "车辆", "汽车", "制造", "材料成型", "工业工程"],
+      "电气": ["电气", "电力", "能源动力", "热动", "核电", "光伏"],
+      "土木": ["土木", "建筑", "工程", "测绘", "城市规划", "交通", "铁道", "水利"],
+      "法律": ["法律", "法学", "知识产权"],
+      "医学": ["医学", "生物", "药学", "临床", "护理", "公共卫生"],
+      "文史": ["中文", "汉语", "新闻", "传播", "马克思", "哲学", "历史", "外语", "英语"]
+    };
+
+    let allJobs = [];
+    let favorites = loadFavorites();
+
+    function loadFavorites() {
+      try {
+        return new Set(JSON.parse(localStorage.getItem(FAV_KEY) || "[]"));
+      } catch {
+        return new Set();
+      }
+    }
+
+    function saveFavorites() {
+      localStorage.setItem(FAV_KEY, JSON.stringify([...favorites]));
+      document.getElementById("stat-fav").textContent = favorites.size;
+    }
+
+    function toggleFavorite(id) {
+      if (favorites.has(id)) favorites.delete(id);
+      else favorites.add(id);
+      saveFavorites();
+      render();
+    }
+
+    function jobMajorText(job) {
+      const parts = [...(job.majors || [])];
+      if (job.description) parts.push(job.description);
+      return parts.join(" ");
+    }
+
+    function matchMajorGroup(job, group) {
+      if (!group) return true;
+      const keywords = MAJOR_GROUPS[group] || [group];
+      const blob = jobMajorText(job).toLowerCase();
+      return keywords.some(kw => blob.includes(kw.toLowerCase()));
+    }
+
+    async function loadData() {
+      const status = document.getElementById("status");
+      try {
+        const resp = await fetch("job.json?_=" + Date.now());
+        if (!resp.ok) throw new Error("无法读取 job.json（HTTP " + resp.status + "）");
+        const data = await resp.json();
+        allJobs = data.jobs || [];
+        updateStats(data);
+        populateIndustryFilter(allJobs);
+        render();
+        status.style.display = "none";
+        document.getElementById("job-table").style.display = "";
+      } catch (err) {
+        status.className = "error";
+        status.innerHTML =
+          "<p><strong>加载失败</strong></p><p>" + err.message + "</p>" +
+          "<p style='margin-top:1rem;font-size:0.85rem;'>请先运行 <code>python main.py</code>，再 <code>python web/serve.py</code> 访问 " +
+          "<a href='http://localhost:8765'>http://localhost:8765</a></p>";
+      }
+    }
+
+    function updateStats(data) {
+      document.getElementById("stat-total").textContent = data.total ?? allJobs.length;
+      document.getElementById("stat-new").textContent = data.new_today ?? 0;
+      document.getElementById("stat-fav").textContent = favorites.size;
+      document.getElementById("stat-hukou").textContent = allJobs.filter(j => j.hukou).length;
+      const updated = data.last_updated || "-";
+      document.getElementById("stat-updated").textContent = updated.replace("T", " ").slice(0, 19);
+    }
+
+    function populateIndustryFilter(jobs) {
+      const sel = document.getElementById("filter-industry");
+      const existing = new Set([...sel.options].map(o => o.value));
+      [...new Set(jobs.map(j => j.industry).filter(Boolean))].sort().forEach(ind => {
+        if (existing.has(ind)) return;
+        const opt = document.createElement("option");
+        opt.value = ind;
+        opt.textContent = ind;
+        sel.appendChild(opt);
+      });
+    }
+
+    function isNewToday(job) {
+      return job.first_seen === today || (job.tags || []).includes("今日新增");
+    }
+
+    function daysUntil(deadline) {
+      if (!deadline) return 9999;
+      const d = new Date(deadline);
+      return isNaN(d) ? 9999 : Math.ceil((d - new Date()) / 86400000);
+    }
+
+    function getFilteredJobs() {
+      const major = document.getElementById("filter-major").value;
+      const industry = document.getElementById("filter-industry").value;
+      const hukou = document.getElementById("filter-hukou").value;
+      const favOnly = document.getElementById("filter-fav").value;
+      const q = document.getElementById("search").value.trim().toLowerCase();
+      const sortBy = document.getElementById("sort-by").value;
+
+      let list = allJobs.filter(j => {
+        if (!matchMajorGroup(j, major)) return false;
+        if (industry && j.industry !== industry) return false;
+        if (hukou === "yes" && !j.hukou) return false;
+        if (hukou === "no" && j.hukou) return false;
+        if (favOnly === "yes" && !favorites.has(j.id)) return false;
+        if (q) {
+          const blob = [j.company, j.title, j.source, j.industry, j.location, jobMajorText(j)]
+            .join(" ").toLowerCase();
+          if (!blob.includes(q)) return false;
+        }
+        return true;
+      });
+
+      if (sortBy === "deadline-asc") {
+        list.sort((a, b) => (a.deadline || "9999").localeCompare(b.deadline || "9999"));
+      } else if (sortBy === "deadline-desc") {
+        list.sort((a, b) => (b.deadline || "").localeCompare(a.deadline || ""));
+      } else if (sortBy === "new-first") {
+        list.sort((a, b) => (isNewToday(b) ? 1 : 0) - (isNewToday(a) ? 1 : 0));
+      } else if (sortBy === "company") {
+        list.sort((a, b) => a.company.localeCompare(b.company, "zh-CN"));
+      }
+
+      return list;
+    }
+
+    function render() {
+      const tbody = document.getElementById("job-body");
+      const list = getFilteredJobs();
+      tbody.innerHTML = "";
+
+      if (list.length === 0) {
+        tbody.innerHTML = "<tr><td colspan='10' class='empty'>暂无匹配岗位，请调整筛选条件或重新运行爬虫</td></tr>";
+        return;
+      }
+
+      list.forEach(job => {
+        const tr = document.createElement("tr");
+        if (isNewToday(job)) tr.classList.add("row-new");
+        if (favorites.has(job.id)) tr.classList.add("row-fav");
+
+        const days = daysUntil(job.deadline);
+        const deadlineCls = days <= 7 && days >= 0 ? "deadline-soon" : "";
+        const isFav = favorites.has(job.id);
+
+        const tags = [];
+        if (isNewToday(job)) tags.push('<span class="tag tag-new">今日新增</span>');
+        if (job.hukou) tags.push('<span class="tag tag-hukou">落户</span>');
+        tags.push('<span class="tag tag-industry">' + esc(job.industry) + '</span>');
+        (job.tags || []).forEach(t => {
+          if (t !== "今日新增" && t !== job.industry) {
+            tags.push('<span class="tag tag-source">' + esc(t) + '</span>');
+          }
+        });
+
+        const majors = (job.majors || []).slice(0, 3);
+        const majorHtml = majors.length
+          ? esc(majors.join("、")) + (job.majors.length > 3 ? "…" : "")
+          : '<span style="color:#94a3b8;">未注明</span>';
+
+        const link = job.url
+          ? '<a href="' + esc(job.url) + '" target="_blank" rel="noopener">' + esc(job.title) + '</a>'
+          : esc(job.title);
+
+        tr.innerHTML =
+          '<td><button class="btn-fav' + (isFav ? ' active' : '') + '" data-id="' + esc(job.id) + '" title="' + (isFav ? '取消收藏' : '收藏') + '">' + (isFav ? '★' : '☆') + '</button></td>' +
+          '<td class="company">' + esc(job.company) + '</td>' +
+          '<td class="title">' + link + '</td>' +
+          '<td class="majors">' + majorHtml + '</td>' +
+          '<td>' + esc(job.industry) + '</td>' +
+          '<td>' + esc(job.education || '-') + '</td>' +
+          '<td>' + esc(job.location || '北京') + '</td>' +
+          '<td class="' + deadlineCls + '">' + esc(job.deadline || '未注明') +
+            (days <= 7 && days >= 0 ? ' (' + days + '天)' : '') + '</td>' +
+          '<td>' + esc(job.source) + '</td>' +
+          '<td>' + tags.join("") + '</td>';
+
+        tbody.appendChild(tr);
+      });
+
+      tbody.querySelectorAll(".btn-fav").forEach(btn => {
+        btn.addEventListener("click", () => toggleFavorite(btn.dataset.id));
+      });
+    }
+
+    function esc(s) {
+      const d = document.createElement("div");
+      d.textContent = s ?? "";
+      return d.innerHTML;
+    }
+
+    ["filter-major", "filter-industry", "filter-hukou", "filter-fav", "sort-by"].forEach(id => {
+      document.getElementById(id).addEventListener("change", render);
+    });
+    document.getElementById("search").addEventListener("input", render);
+
+    loadData();
+  </script>
+</body>
+</html>
