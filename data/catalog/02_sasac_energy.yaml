@@ -1,0 +1,96 @@
+title: 国资委央企-能源石油电网
+enterprises:
+- name: 中国石油天然气集团
+  category: 央企
+  industry: 石油
+  priority: 1
+  search_keywords:
+  - 中石油
+  - 中国石油
+- name: 中国石油化工集团
+  category: 央企
+  industry: 石油
+  priority: 1
+  search_keywords:
+  - 中石化
+  - 中国石油化工
+- name: 中国海洋石油集团
+  category: 央企
+  industry: 石油
+  priority: 1
+  search_keywords:
+  - 中海油
+  - 中国海洋石油
+- name: 国家石油天然气管网集团
+  category: 央企
+  industry: 石油
+  priority: 1
+  search_keywords:
+  - 国家管网
+- name: 国家电网
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 国家电网
+  - 国网
+- name: 中国南方电网
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 南方电网
+- name: 中国华能集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 中国华能
+  - 华能
+- name: 中国大唐集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 中国大唐
+  - 大唐
+- name: 中国华电集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 中国华电
+  - 华电
+- name: 国家电力投资集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 国家电投
+- name: 中国长江三峡集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 长江三峡
+  - 三峡集团
+- name: 国家能源投资集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 国家能源
+  - 神华
+- name: 中国广核集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 中广核
+  - 中国广核
+- name: 中国核工业建设
+  category: 央企
+  industry: 能源/核
+  priority: 2
+  search_keywords:
+  - 中核建设

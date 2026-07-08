@@ -91,6 +91,15 @@ filters:
     - 铁道
     - 事业单位
     - 铁科院
+    - 事业单位
+    - 博物馆
+    - 科学院
+    - 大学
+    - 医院
+    - 研究院
+    - 杂志社
+    - 银行
+    - 保险
 
   # 北京重点国企（额外白名单，公司名匹配即保留）
   beijing_soe_companies:
@@ -155,10 +164,25 @@ guopin_keywords:
   - "国家铁路局"
   - "铁科院"
   - "中国铁路"
+  - "中核"
+  - "中船"
+  - "中国电科"
+  - "国网"
+  - "中建"
+  - "人保"
+  - "工商银行"
+  - "北京大学"
+  - "清华大学"
+  - "中科院"
+  - "故宫博物院"
+  - "北汽"
+  - "北控"
+  - "首钢"
 
-# 企业专搜配置（data/beijing_soe_directory.yaml 名录驱动）
+# 企业专搜配置（data/catalog/ 名录驱动，共 230+ 家）
 guopin_company:
-  use_all_keywords: false   # true=每家用全部关键词，更全但更慢
+  use_all_keywords: false   # true=每家用全部别名，更全但更慢
+  min_priority: 2           # 1=仅核心央企(副部级)，2=全部单位
 company_sites:
   - name: 中国航天科技集团
     url: https://www.spacetalent.com.cn/zhiwei.html

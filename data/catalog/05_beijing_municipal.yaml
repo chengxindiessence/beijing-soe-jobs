@@ -1,0 +1,210 @@
+title: 北京市属国企
+enterprises:
+- name: 首钢集团
+  category: 北京市属
+  industry: 钢铁
+  priority: 1
+  search_keywords:
+  - 首钢
+- name: 京投公司
+  category: 北京市属
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 京投
+  - 地铁建设
+- name: 北京地铁
+  category: 北京市属
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 北京地铁
+- name: 北京公交集团
+  category: 北京市属
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 北京公交
+- name: 首发集团
+  category: 北京市属
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 首发集团
+- name: 北京排水集团
+  category: 北京市属
+  industry: 市政
+  priority: 1
+  search_keywords:
+  - 排水集团
+- name: 北京环卫集团
+  category: 北京市属
+  industry: 市政
+  priority: 1
+  search_keywords:
+  - 环卫集团
+- name: 北京水务投资
+  category: 北京市属
+  industry: 水务
+  priority: 1
+  search_keywords:
+  - 水务投资
+- name: 北投集团
+  category: 北京市属
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 北投
+  - 副中心
+- name: 北京建工集团
+  category: 北京市属
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 北京建工
+- name: 北京城建集团
+  category: 北京市属
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 北京城建
+- name: 北京金隅集团
+  category: 北京市属
+  industry: 建材
+  priority: 1
+  search_keywords:
+  - 金隅
+- name: 北辰实业集团
+  category: 北京市属
+  industry: 房地产
+  priority: 1
+  search_keywords:
+  - 北辰实业
+- name: 北京保障房中心
+  category: 北京市属
+  industry: 房地产
+  priority: 1
+  search_keywords:
+  - 保障房
+- name: 北控集团
+  category: 北京市属
+  industry: 综合
+  priority: 1
+  search_keywords:
+  - 北控
+- name: 北京能源集团
+  category: 北京市属
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 京能
+  - 北京能源
+- name: 首创集团
+  category: 北京市属
+  industry: 综合
+  priority: 1
+  search_keywords:
+  - 首创
+- name: 北京银行
+  category: 北京市属
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 北京银行
+- name: 华夏银行
+  category: 北京市属
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 华夏银行
+- name: 北京农商行
+  category: 北京市属
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 北京农商行
+- name: 北京金控
+  category: 北京市属
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 北京金控
+- name: 北汽集团
+  category: 北京市属
+  industry: 汽车
+  priority: 1
+  search_keywords:
+  - 北汽
+- name: 京城机电
+  category: 北京市属
+  industry: 装备制造
+  priority: 1
+  search_keywords:
+  - 京城机电
+- name: 北京电控
+  category: 北京市属
+  industry: 电子
+  priority: 1
+  search_keywords:
+  - 北京电控
+- name: 京东方
+  category: 北京市属
+  industry: 电子
+  priority: 1
+  search_keywords:
+  - 京东方
+  - BOE
+- name: 首农食品集团
+  category: 北京市属
+  industry: 食品
+  priority: 1
+  search_keywords:
+  - 首农
+- name: 北京一轻控股
+  category: 北京市属
+  industry: 轻工
+  priority: 1
+  search_keywords:
+  - 一轻控股
+- name: 同仁堂集团
+  category: 北京市属
+  industry: 医药
+  priority: 1
+  search_keywords:
+  - 同仁堂
+- name: 祥龙公司
+  category: 北京市属
+  industry: 商业
+  priority: 1
+  search_keywords:
+  - 祥龙
+- name: 首旅集团
+  category: 北京市属
+  industry: 文旅
+  priority: 1
+  search_keywords:
+  - 首旅
+- name: 时尚控股
+  category: 北京市属
+  industry: 纺织
+  priority: 1
+  search_keywords:
+  - 时尚控股
+- name: 北京国资公司
+  category: 北京市属
+  industry: 投资
+  priority: 1
+  search_keywords:
+  - 北京国资
+- name: 北京国管
+  category: 北京市属
+  industry: 投资
+  priority: 1
+  search_keywords:
+  - 北京国管
+- name: 中关村发展集团
+  category: 北京市属
+  industry: 科技园区
+  priority: 1
+  search_keywords:
+  - 中关村发展

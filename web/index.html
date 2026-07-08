@@ -250,6 +250,16 @@
   <main>
     <div class="toolbar">
       <label>
+        单位类型
+        <select id="filter-category">
+          <option value="">全部类型</option>
+          <option value="央企">央企</option>
+          <option value="金融央企">金融央企</option>
+          <option value="北京市属">北京市属国企</option>
+          <option value="事业单位">事业编/事业单位</option>
+        </select>
+      </label>
+      <label>
         专业筛选
         <select id="filter-major">
           <option value="">全部专业</option>
@@ -437,6 +447,7 @@
 
     function getFilteredJobs() {
       const major = document.getElementById("filter-major").value;
+      const category = document.getElementById("filter-category").value;
       const industry = document.getElementById("filter-industry").value;
       const hukou = document.getElementById("filter-hukou").value;
       const favOnly = document.getElementById("filter-fav").value;
@@ -445,6 +456,7 @@
 
       let list = allJobs.filter(j => {
         if (!matchMajorGroup(j, major)) return false;
+        if (category && !(j.tags || []).includes(category)) return false;
         if (industry && !(j.industry || "").includes(industry)) return false;
         if (hukou === "yes" && !j.hukou) return false;
         if (hukou === "no" && j.hukou) return false;
@@ -535,7 +547,7 @@
       return d.innerHTML;
     }
 
-    ["filter-major", "filter-industry", "filter-hukou", "filter-fav", "sort-by"].forEach(id => {
+    ["filter-major", "filter-category", "filter-industry", "filter-hukou", "filter-fav", "sort-by"].forEach(id => {
       document.getElementById(id).addEventListener("change", render);
     });
     document.getElementById("search").addEventListener("input", render);

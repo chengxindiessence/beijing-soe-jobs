@@ -1,0 +1,173 @@
+title: 财政部管理央企-金融文化
+enterprises:
+- name: 中国国家铁路集团
+  category: 央企
+  industry: 铁路
+  priority: 1
+  search_keywords:
+  - 国铁
+  - 中国铁路
+- name: 中国邮政集团
+  category: 央企
+  industry: 邮政
+  priority: 1
+  search_keywords:
+  - 中国邮政
+- name: 中国烟草总公司
+  category: 央企
+  industry: 烟草
+  priority: 1
+  search_keywords:
+  - 中国烟草
+- name: 北大荒集团
+  category: 央企
+  industry: 农业
+  priority: 1
+  search_keywords:
+  - 北大荒
+- name: 中国人民保险集团
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 人保
+- name: 中国人寿保险集团
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 中国人寿
+- name: 中国太平保险集团
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 中国太平
+- name: 中国出口信用保险
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 出口信保
+- name: 中国中信金融
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 中信
+- name: 中国光大集团
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 光大
+- name: 中国银河证券
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 银河证券
+- name: 中国华融资产
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 中国华融
+- name: 中国长城资产
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 长城资产
+- name: 中国东方资产
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 东方资产
+- name: 中国信达资产
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 信达资产
+- name: 中国出版集团
+  category: 文化央企
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 中国出版
+- name: 中国电影集团
+  category: 文化央企
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 中国电影
+- name: 中国对外文化集团
+  category: 文化央企
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 对外文化
+- name: 工商银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 工商银行
+  - 工行
+- name: 农业银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 农业银行
+  - 农行
+- name: 中国银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 中国银行
+  - 中行
+- name: 建设银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 建设银行
+  - 建行
+- name: 交通银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 交通银行
+  - 交行
+- name: 邮储银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 邮储银行
+- name: 进出口银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 进出口银行
+  - 口行
+- name: 农业发展银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 农业发展银行
+  - 农发行
+- name: 国家开发银行
+  category: 金融央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 国家开发银行
+  - 国开行

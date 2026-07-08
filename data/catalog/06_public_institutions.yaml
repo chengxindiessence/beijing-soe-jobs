@@ -1,0 +1,391 @@
+title: 事业编单位
+enterprises:
+- name: 新华社
+  category: 事业单位
+  industry: 媒体
+  priority: 1
+  search_keywords:
+  - 新华社
+- name: 中央广播电视总台
+  category: 事业单位
+  industry: 媒体
+  priority: 1
+  search_keywords:
+  - 中央广播电视总台
+  - 央视
+- name: 中国科学院
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中科院
+  - 中国科学院
+- name: 中国社会科学院
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中国社科院
+- name: 中国工程院
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中国工程院
+- name: 国务院发展研究中心
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 国务院发展研究中心
+- name: 中央党校
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 中央党校
+  - 国家行政学院
+- name: 中国气象局
+  category: 事业单位
+  industry: 气象
+  priority: 1
+  search_keywords:
+  - 中国气象局
+- name: 中国地震局
+  category: 事业单位
+  industry: 地震
+  priority: 1
+  search_keywords:
+  - 中国地震局
+- name: 国家自然科学基金委
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 自然科学基金
+- name: 中国农科院
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中国农科院
+- name: 中国地质调查局
+  category: 事业单位
+  industry: 地质
+  priority: 1
+  search_keywords:
+  - 地质调查局
+- name: 中国建科院
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中国建科院
+- name: 中国信通院
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中国信通院
+- name: 北京大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北京大学
+- name: 清华大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 清华大学
+- name: 中国人民大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 中国人民大学
+- name: 北京航空航天大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北京航空航天
+  - 北航
+- name: 北京理工大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北京理工大学
+  - 北理工
+- name: 中国农业大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 中国农业大学
+- name: 中央财经大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 中央财经
+  - 央财
+- name: 对外经济贸易大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 对外经贸
+- name: 北京外国语大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北京外国语
+  - 北外
+- name: 中国政法大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 中国政法
+- name: 北京体育大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北京体育大学
+- name: 中央民族大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 中央民族
+- name: 中国人民公安大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 公安大学
+- name: 外交学院
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 外交学院
+- name: 国际关系学院
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 国际关系学院
+- name: 中国疾控中心
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 中国疾控
+  - 疾控中心
+- name: 北京协和医院
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 协和医院
+- name: 中日友好医院
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 中日友好医院
+- name: 北京天坛医院
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 天坛医院
+- name: 阜外医院
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 阜外医院
+- name: 肿瘤医院
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 肿瘤医院
+- name: 国家博物馆
+  category: 事业单位
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 国家博物馆
+- name: 故宫博物院
+  category: 事业单位
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 故宫博物院
+- name: 国家图书馆
+  category: 事业单位
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 国家图书馆
+- name: 中国美术馆
+  category: 事业单位
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 中国美术馆
+- name: 人民日报社
+  category: 事业单位
+  industry: 媒体
+  priority: 1
+  search_keywords:
+  - 人民日报
+- name: 求是杂志社
+  category: 事业单位
+  industry: 媒体
+  priority: 1
+  search_keywords:
+  - 求是杂志
+- name: 首都师范大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 首都师范
+  - 首师大
+- name: 首都经济贸易大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 首都经贸
+  - 首经贸
+- name: 北京第二外国语学院
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北二外
+- name: 北京建筑大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北京建筑大学
+- name: 北京农学院
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北京农学院
+- name: 北京联合大学
+  category: 事业单位
+  industry: 教育
+  priority: 1
+  search_keywords:
+  - 北京联合大学
+- name: 北京友谊医院
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 北京友谊医院
+- name: 北京朝阳医院
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 朝阳医院
+- name: 北京安贞医院
+  category: 事业单位
+  industry: 医疗
+  priority: 1
+  search_keywords:
+  - 安贞医院
+- name: 首都博物馆
+  category: 事业单位
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 首都博物馆
+- name: 北京图书馆
+  category: 事业单位
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 北京图书馆
+- name: 北京天文馆
+  category: 事业单位
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 北京天文馆
+- name: 北京自然博物馆
+  category: 事业单位
+  industry: 文化
+  priority: 1
+  search_keywords:
+  - 自然博物馆
+- name: 北京城市规划院
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 城市规划院
+- name: 北京农科院
+  category: 事业单位
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 北京农科院
+- name: 交通运输部规划研究院
+  category: 事业单位
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 交通运输部规划
+- name: 交通运输部科学研究院
+  category: 事业单位
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 交通运输部科学
+- name: 交通运输部公路科学研究院
+  category: 事业单位
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 公路科学研究院
+- name: 交通运输部水运科学研究院
+  category: 事业单位
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 水运科学
+- name: 中国交通通信信息中心
+  category: 事业单位
+  industry: 交通
+  priority: 1
+  search_keywords:
+  - 交通通信
+- name: 国家铁路局
+  category: 事业单位
+  industry: 铁路
+  priority: 1
+  search_keywords:
+  - 国家铁路局
+- name: 中国铁道科学研究院
+  category: 事业单位
+  industry: 铁路
+  priority: 1
+  search_keywords:
+  - 铁科院
+  - 铁道科学研究院

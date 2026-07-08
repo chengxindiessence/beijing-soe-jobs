@@ -1,0 +1,484 @@
+title: 国资委央企-制造基建等
+enterprises:
+- name: 中国电信集团
+  category: 央企
+  industry: 通信
+  priority: 1
+  search_keywords:
+  - 中国电信
+- name: 中国联合网络通信集团
+  category: 央企
+  industry: 通信
+  priority: 1
+  search_keywords:
+  - 中国联通
+- name: 中国移动通信集团
+  category: 央企
+  industry: 通信
+  priority: 1
+  search_keywords:
+  - 中国移动
+- name: 中国卫星网络集团
+  category: 央企
+  industry: 通信
+  priority: 1
+  search_keywords:
+  - 中国星网
+- name: 中国电子信息产业集团
+  category: 央企
+  industry: 电子
+  priority: 1
+  search_keywords:
+  - 中国电子
+  - CEC
+- name: 中国第一汽车集团
+  category: 央企
+  industry: 汽车
+  priority: 1
+  search_keywords:
+  - 中国一汽
+  - 一汽
+- name: 东风汽车集团
+  category: 央企
+  industry: 汽车
+  priority: 1
+  search_keywords:
+  - 东风汽车
+- name: 中国一重集团
+  category: 央企
+  industry: 装备制造
+  priority: 1
+  search_keywords:
+  - 中国一重
+- name: 中国机械工业集团
+  category: 央企
+  industry: 装备制造
+  priority: 1
+  search_keywords:
+  - 国机集团
+- name: 哈尔滨电气集团
+  category: 央企
+  industry: 装备制造
+  priority: 1
+  search_keywords:
+  - 哈电
+- name: 东方电气集团
+  category: 央企
+  industry: 装备制造
+  priority: 1
+  search_keywords:
+  - 东方电气
+- name: 中国中车集团
+  category: 央企
+  industry: 轨道交通
+  priority: 1
+  search_keywords:
+  - 中国中车
+  - 中车
+- name: 中国宝武钢铁集团
+  category: 央企
+  industry: 冶金
+  priority: 1
+  search_keywords:
+  - 宝武
+  - 中国宝武
+- name: 鞍钢集团
+  category: 央企
+  industry: 冶金
+  priority: 1
+  search_keywords:
+  - 鞍钢
+- name: 中国铝业集团
+  category: 央企
+  industry: 冶金
+  priority: 1
+  search_keywords:
+  - 中铝
+  - 中国铝业
+- name: 中国矿产资源集团
+  category: 央企
+  industry: 矿业
+  priority: 1
+  search_keywords:
+  - 中国矿产
+- name: 中国五矿集团
+  category: 央企
+  industry: 矿业
+  priority: 1
+  search_keywords:
+  - 中国五矿
+  - 五矿
+- name: 中国黄金集团
+  category: 央企
+  industry: 矿业
+  priority: 1
+  search_keywords:
+  - 中国黄金
+- name: 中国建筑集团
+  category: 央企
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 中国建筑
+  - 中建
+- name: 中国中铁
+  category: 央企
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 中国中铁
+  - 中铁
+- name: 中国铁建
+  category: 央企
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 中国铁建
+  - 铁建
+- name: 中国交通建设集团
+  category: 央企
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 中国交建
+  - 中交
+- name: 中国电力建设集团
+  category: 央企
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 中国电建
+- name: 中国能源建设集团
+  category: 央企
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 中国能建
+- name: 中国安能建设集团
+  category: 央企
+  industry: 基建
+  priority: 1
+  search_keywords:
+  - 中国安能
+- name: 中国航空集团
+  category: 央企
+  industry: 航空
+  priority: 1
+  search_keywords:
+  - 国航
+  - 中国航空
+- name: 中国东方航空集团
+  category: 央企
+  industry: 航空
+  priority: 1
+  search_keywords:
+  - 东方航空
+  - 东航
+- name: 中国南方航空集团
+  category: 央企
+  industry: 航空
+  priority: 1
+  search_keywords:
+  - 南方航空
+  - 南航
+- name: 中国航空油料集团
+  category: 央企
+  industry: 航空
+  priority: 1
+  search_keywords:
+  - 中航油
+- name: 中国航空器材集团
+  category: 央企
+  industry: 航空
+  priority: 1
+  search_keywords:
+  - 中航材
+- name: 中国民航信息集团
+  category: 央企
+  industry: 航空
+  priority: 1
+  search_keywords:
+  - 中航信
+  - 航信
+- name: 中国远洋海运集团
+  category: 央企
+  industry: 物流
+  priority: 1
+  search_keywords:
+  - 中远海运
+- name: 中国物流集团
+  category: 央企
+  industry: 物流
+  priority: 1
+  search_keywords:
+  - 中国物流
+- name: 中国储备粮管理集团
+  category: 央企
+  industry: 农业
+  priority: 1
+  search_keywords:
+  - 中储粮
+- name: 中粮集团
+  category: 央企
+  industry: 农业
+  priority: 1
+  search_keywords:
+  - 中粮
+- name: 中国中化控股
+  category: 央企
+  industry: 化工
+  priority: 1
+  search_keywords:
+  - 中国中化
+  - 中化
+- name: 中国通用技术集团
+  category: 央企
+  industry: 综合
+  priority: 1
+  search_keywords:
+  - 通用技术
+- name: 华侨城集团
+  category: 央企
+  industry: 文旅
+  priority: 1
+  search_keywords:
+  - 华侨城
+- name: 中国旅游集团
+  category: 央企
+  industry: 文旅
+  priority: 1
+  search_keywords:
+  - 中国旅游
+- name: 中国南水北调集团
+  category: 央企
+  industry: 水利
+  priority: 1
+  search_keywords:
+  - 南水北调
+- name: 国药集团
+  category: 央企
+  industry: 医药
+  priority: 1
+  search_keywords:
+  - 国药
+  - 中国医药
+- name: 中国保利集团
+  category: 央企
+  industry: 综合
+  priority: 1
+  search_keywords:
+  - 保利
+  - 中国保利
+- name: 中国建科集团
+  category: 央企
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中国建科
+- name: 中国冶金地质总局
+  category: 央企
+  industry: 地质
+  priority: 1
+  search_keywords:
+  - 冶金地质
+- name: 中国煤炭地质总局
+  category: 央企
+  industry: 地质
+  priority: 1
+  search_keywords:
+  - 中煤地质
+- name: 新兴际华集团
+  category: 央企
+  industry: 轻工
+  priority: 1
+  search_keywords:
+  - 新兴际华
+- name: 国家开发投资集团
+  category: 央企
+  industry: 投资
+  priority: 1
+  search_keywords:
+  - 国投
+  - 国家开发投资
+- name: 中国诚通控股
+  category: 央企
+  industry: 投资
+  priority: 1
+  search_keywords:
+  - 中国诚通
+- name: 中国国新控股
+  category: 央企
+  industry: 投资
+  priority: 1
+  search_keywords:
+  - 中国国新
+- name: 中国林业集团
+  category: 央企
+  industry: 农业
+  priority: 1
+  search_keywords:
+  - 中国林业
+- name: 中国检验认证集团
+  category: 央企
+  industry: 检验
+  priority: 1
+  search_keywords:
+  - 中检
+  - 检验认证
+- name: 中国国际技术智力合作集团
+  category: 央企
+  industry: 人力资源
+  priority: 1
+  search_keywords:
+  - 中智
+- name: 中国国际工程咨询
+  category: 央企
+  industry: 咨询
+  priority: 1
+  search_keywords:
+  - 中咨
+  - 国际工程咨询
+- name: 中国铁路通信信号集团
+  category: 央企
+  industry: 轨道交通
+  priority: 1
+  search_keywords:
+  - 中国通号
+- name: 中国节能环保集团
+  category: 央企
+  industry: 环保
+  priority: 1
+  search_keywords:
+  - 中国节能
+- name: 中国电气装备集团
+  category: 央企
+  industry: 电气
+  priority: 1
+  search_keywords:
+  - 中国电气装备
+- name: 中国机械科学研究总院
+  category: 央企
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 机科院
+- name: 中国钢研科技集团
+  category: 央企
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中国钢研
+- name: 中国有研科技集团
+  category: 央企
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 有研科技
+- name: 中国化学工程集团
+  category: 央企
+  industry: 化工
+  priority: 1
+  search_keywords:
+  - 中国化学
+- name: 中国建材集团
+  category: 央企
+  industry: 建材
+  priority: 1
+  search_keywords:
+  - 中国建材
+- name: 中国有色矿业集团
+  category: 央企
+  industry: 矿业
+  priority: 1
+  search_keywords:
+  - 中国有色
+- name: 中国稀土集团
+  category: 央企
+  industry: 矿业
+  priority: 1
+  search_keywords:
+  - 中国稀土
+- name: 矿冶科技集团
+  category: 央企
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 矿冶科技
+- name: 中国盐业集团
+  category: 央企
+  industry: 化工
+  priority: 1
+  search_keywords:
+  - 中盐
+- name: 中国农发集团
+  category: 央企
+  industry: 农业
+  priority: 1
+  search_keywords:
+  - 中国农发
+- name: 中国中煤能源集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 中煤能源
+- name: 中国煤炭科工集团
+  category: 央企
+  industry: 能源
+  priority: 1
+  search_keywords:
+  - 煤炭科工
+- name: 中国中丝集团
+  category: 央企
+  industry: 贸易
+  priority: 1
+  search_keywords:
+  - 中国中丝
+- name: 中国中轻集团
+  category: 央企
+  industry: 轻工
+  priority: 1
+  search_keywords:
+  - 中国中轻
+- name: 中国普天
+  category: 央企
+  industry: 通信
+  priority: 1
+  search_keywords:
+  - 中国普天
+- name: 中国建研院
+  category: 央企
+  industry: 科研
+  priority: 1
+  search_keywords:
+  - 中国建研院
+- name: 中国中车
+  category: 央企
+  industry: 轨道交通
+  priority: 1
+  search_keywords:
+  - 中车
+- name: 华润集团
+  category: 央企
+  industry: 综合
+  priority: 1
+  search_keywords:
+  - 华润
+- name: 招商局集团
+  category: 央企
+  industry: 综合
+  priority: 1
+  search_keywords:
+  - 招商局
+- name: 中国中信集团
+  category: 央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 中信集团
+- name: 中国光大集团
+  category: 央企
+  industry: 金融
+  priority: 1
+  search_keywords:
+  - 光大集团

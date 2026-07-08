@@ -1,0 +1,102 @@
+title: 国资委央企-军工航天
+enterprises:
+- name: 中国核工业集团
+  category: 央企
+  industry: 军工/核
+  priority: 1
+  search_keywords:
+  - 中核
+  - 中国核工业
+- name: 中国航天科技集团
+  category: 央企
+  industry: 航天
+  priority: 1
+  search_keywords:
+  - 中国航天
+  - 航天科技
+- name: 中国航天科工集团
+  category: 央企
+  industry: 航天
+  priority: 1
+  search_keywords:
+  - 航天科工
+  - 中国航天科工
+- name: 中国航空工业集团
+  category: 央企
+  industry: 航空
+  priority: 1
+  search_keywords:
+  - 航空工业集团
+  - 中国航空
+- name: 中国船舶集团
+  category: 央企
+  industry: 军工
+  priority: 1
+  search_keywords:
+  - 中国船舶
+  - 中船
+- name: 中国兵器工业集团
+  category: 央企
+  industry: 军工
+  priority: 1
+  search_keywords:
+  - 兵器工业
+  - 中国兵器
+- name: 中国兵器装备集团
+  category: 央企
+  industry: 军工
+  priority: 1
+  search_keywords:
+  - 兵器装备
+- name: 中国电子科技集团
+  category: 央企
+  industry: 电子/军工
+  priority: 1
+  search_keywords:
+  - 中国电科
+  - 中电科
+- name: 中国航空发动机集团
+  category: 央企
+  industry: 航空
+  priority: 1
+  search_keywords:
+  - 中国航发
+  - 航空发动机
+- name: 中国融通集团
+  category: 央企
+  industry: 资产管理
+  priority: 1
+  search_keywords:
+  - 中国融通
+- name: 中国运载火箭技术研究院
+  category: 央企
+  industry: 航天
+  priority: 1
+  search_keywords:
+  - 运载火箭
+  - 航天一院
+- name: 中国空间技术研究院
+  category: 央企
+  industry: 航天
+  priority: 1
+  search_keywords:
+  - 空间技术研究院
+  - 航天五院
+- name: 航天动力技术研究院
+  category: 央企
+  industry: 航天
+  priority: 1
+  search_keywords:
+  - 航天四院
+- name: 中国卫通集团
+  category: 央企
+  industry: 航天
+  priority: 2
+  search_keywords:
+  - 中国卫通
+- name: 中国乐凯集团
+  category: 央企
+  industry: 航天
+  priority: 2
+  search_keywords:
+  - 中国乐凯

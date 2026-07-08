@@ -1,9 +1,21 @@
+# GitHub Pages 部署
+# - push main：仅部署 web/（需本地已更新 job.json 并提交）
+# - 手动 Run workflow / 每天8点：先爬取再部署
+
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
+  schedule:
+    - cron: "0 0 * * *" # UTC 0:00 = 北京时间 8:00
   workflow_dispatch:
+    inputs:
+      run_crawler:
+        description: "运行爬虫更新数据后再部署"
+        required: false
+        default: true
+        type: boolean
 
 permissions:
   contents: read
@@ -15,24 +27,46 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Python
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: pip install -r requirements.txt
+
+      - name: Run crawler
+        if: |
+          github.event_name == 'schedule' ||
+          (github.event_name == 'workflow_dispatch' && inputs.run_crawler)
+        run: python main.py
+        continue-on-error: true
+
+      - name: Ensure job.json exists
+        run: test -f web/job.json || echo '{"last_updated":"","total":0,"new_today":0,"jobs":[]}' > web/job.json
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: web
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

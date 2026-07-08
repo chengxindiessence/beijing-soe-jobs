@@ -28,8 +28,15 @@ beijing-soe-jobs/
 │
 ├── data/
 │   ├── job.json              # 爬虫输出的原始数据
-│   ├── beijing_soe_directory.yaml  # 110家在京央企/国企名录
-│   └── institutions_extra.yaml     # 航天/航空/交通/铁道补充名录
+│   ├── catalog/                  # ★ 完整名录（230+ 家，6 类文件）
+│   │   ├── 01_sasac_military.yaml    # 国资委-军工航天
+│   │   ├── 02_sasac_energy.yaml      # 能源石油电网
+│   │   ├── 03_sasac_industry.yaml    # 制造基建等
+│   │   ├── 04_mof_finance.yaml       # 财政部-金融文化
+│   │   ├── 05_beijing_municipal.yaml # 北京市属42家
+│   │   └── 06_public_institutions.yaml # 事业编单位
+│   ├── beijing_soe_directory.yaml  # 旧版名录（兼容）
+│   └── institutions_extra.yaml     # 航天/交通/铁道补充
 │
 ├── web/
 │   ├── index.html            # ★ 招聘表格网页（浏览器打开）
@@ -177,7 +184,17 @@ guopin_company:
     search_keywords: ["公司简称", "全称关键词"]
 ```
 
-保存后重新运行 `python main.py`。名录中 84 家央企总部在京 + 26 家北京市属国企。
+保存后重新运行 `python main.py`。当前共 **269 家** 单位（去重后），涵盖：
+
+| 类型 | 数量 | 说明 |
+|------|------|------|
+| 央企 | 130 | 国资委98家+下属研究院 |
+| 事业单位 | 71 | 部委直属+北京市属+高校医院 |
+| 北京市属 | 46 | 42家市属国企 |
+| 金融央企 | 19 | 银行/保险/AMC |
+| 文化央企 | 3 | 出版/电影等 |
+
+增删单位可编辑 `data/catalog/` 下对应文件，或运行 `python scripts/build_catalog.py` 重新生成。
 
 ### 调整国聘搜索词
 

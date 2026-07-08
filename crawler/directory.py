@@ -6,20 +6,50 @@ from typing import Any
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DIRECTORY = ROOT / "data" / "beijing_soe_directory.yaml"
-EXTRA_DIRECTORY = ROOT / "data" / "institutions_extra.yaml"
+CATALOG_DIR = ROOT / "data" / "catalog"
+LEGACY_FILES = [
+    ROOT / "data" / "beijing_soe_directory.yaml",
+    ROOT / "data" / "institutions_extra.yaml",
+]
 
 
 def load_soe_directory(path: Path | None = None) -> list[dict[str, Any]]:
-    file_path = path or DEFAULT_DIRECTORY
+    """加载全部招聘单位名录（catalog + 旧版 yaml）。"""
+    if path is not None:
+        return _load_file(path)
+
     entries: list[dict[str, Any]] = []
-    for fp in (file_path, EXTRA_DIRECTORY):
-        if not fp.exists():
-            continue
-        with fp.open(encoding="utf-8") as f:
-            data = yaml.safe_load(f) or {}
-        entries.extend(data.get("enterprises", []))
+    seen_names: set[str] = set()
+
+    for fp in sorted(CATALOG_DIR.glob("*.yaml")):
+        entries.extend(_dedupe_by_name(_load_file(fp), seen_names))
+
+    for fp in LEGACY_FILES:
+        if fp.exists():
+            entries.extend(_dedupe_by_name(_load_file(fp), seen_names))
+
     return entries
+
+
+def _load_file(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    with path.open(encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    return data.get("enterprises", [])
+
+
+def _dedupe_by_name(
+    items: list[dict[str, Any]], seen: set[str]
+) -> list[dict[str, Any]]:
+    out: list[dict[str, Any]] = []
+    for ent in items:
+        name = ent.get("name", "")
+        if not name or name in seen:
+            continue
+        seen.add(name)
+        out.append(ent)
+    return out
 
 
 def directory_whitelist(directory: list[dict[str, Any]] | None = None) -> list[str]:

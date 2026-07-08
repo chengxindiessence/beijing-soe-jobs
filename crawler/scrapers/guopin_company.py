@@ -29,21 +29,32 @@ class GuopinCompanyScraper(BaseScraper):
         max_pages = int(
             self.config.get("crawler", {}).get("max_pages_company", 3)
         )
+        company_cfg = self.config.get("guopin_company", {})
+        min_priority = int(company_cfg.get("min_priority", 2))  # 1=仅核心央企
+        use_all_kw = bool(company_cfg.get("use_all_keywords", False))
+
         seen_ids: set[str] = set()
+        seen_keywords: set[str] = set()
         jobs: list[Job] = []
         searched = 0
+        skipped = 0
 
         for ent in enterprises:
+            priority = int(ent.get("priority", 2))
+            if priority > min_priority:
+                skipped += 1
+                continue
+
             keywords = ent.get("search_keywords") or [ent.get("name", "")]
-            # 默认只用第一个关键词，减少请求量；config 设 use_all_keywords: true 可搜全部
-            if not self.config.get("guopin_company", {}).get("use_all_keywords", False):
+            if not use_all_kw:
                 keywords = keywords[:1]
             industry = ent.get("industry", "其他")
             category = ent.get("category", "")
 
             for keyword in keywords:
-                if not keyword:
+                if not keyword or keyword in seen_keywords:
                     continue
+                seen_keywords.add(keyword)
                 searched += 1
                 page = 1
                 while page <= max_pages:
@@ -87,8 +98,9 @@ class GuopinCompanyScraper(BaseScraper):
                     page += 1
 
         logger.info(
-            "企业专搜完成：检索 %d 个关键词，抓取 %d 条",
+            "企业专搜完成：检索 %d 个关键词（跳过 %d 家低优先级），抓取 %d 条",
             searched,
+            skipped,
             len(jobs),
         )
         return jobs
