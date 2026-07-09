@@ -64,12 +64,12 @@ def ensure_repo(username: str, token: str) -> None:
             "access_token": token,
             "name": REPO_NAME,
             "description": "北京央国企27届校招追踪（国内镜像）",
-            "public": "true",
+            "private": "false",
             "has_issues": "false",
             "has_wiki": "false",
         },
     )
-    print(f"✓ 已创建 Gitee 仓库: {username}/{REPO_NAME}")
+    print(f"✓ 已创建 Gitee 仓库: {username}/{REPO_NAME}", flush=True)
 
 
 def push_pages_branch(username: str, token: str) -> None:
@@ -174,29 +174,35 @@ def main() -> int:
     gitee_token = os.environ.get("GITEE_TOKEN", "").strip()
     gh_token = os.environ.get("GITHUB_TOKEN", "").strip()
 
+    def log(msg: str) -> None:
+        print(msg, flush=True)
+
     if not username or not gitee_token:
-        print("请设置环境变量:")
-        print("  export GITEE_USERNAME=你的Gitee用户名")
-        print("  export GITEE_TOKEN=你的Gitee私人令牌")
-        print("")
-        print("令牌申请: https://gitee.com/profile/personal_access_tokens")
-        print("  勾选 projects 权限")
+        log("请设置环境变量:")
+        log("  export GITEE_USERNAME=你的Gitee用户名")
+        log("  export GITEE_TOKEN=你的Gitee私人令牌")
+        log("")
+        log("令牌申请: https://gitee.com/profile/personal_access_tokens")
+        log("  勾选 projects 权限")
         return 1
 
     if not WEB_DIR.exists():
-        print(f"错误: 未找到 {WEB_DIR}")
+        log(f"错误: 未找到 {WEB_DIR}")
         return 1
 
-    # verify token
+    log("验证 Gitee 令牌...")
     user = api("GET", "/user", gitee_token, {"access_token": gitee_token})
     actual = user.get("login") or user.get("name")
     if actual and actual.lower() != username.lower():
-        print(f"⚠ 用户名不匹配，将使用令牌对应账号: {actual}")
+        log(f"⚠ 用户名不匹配，将使用令牌对应账号: {actual}")
         username = actual
 
-    print(f"==> 配置 Gitee Pages: {username}/{REPO_NAME}")
+    log(f"==> 配置 Gitee Pages: {username}/{REPO_NAME}")
+    log("检查/创建 Gitee 仓库...")
     ensure_repo(username, gitee_token)
+    log("推送 web/ 到 pages 分支（可能需要几秒）...")
     push_pages_branch(username, gitee_token)
+    log("触发 Pages 构建...")
     trigger_pages_build(username, gitee_token)
 
     pages = get_pages_info(username, gitee_token)
