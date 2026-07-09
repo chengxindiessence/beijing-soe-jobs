@@ -323,17 +323,26 @@ git push -u origin main
 
 ### 国内访问（Gitee Pages 备用）
 
-GitHub Pages（`*.github.io`）在国内经常打不开或极慢。可同步部署到 Gitee：
+GitHub Pages（`*.github.io`）在国内经常打不开或极慢。一键配置 Gitee 镜像：
 
 ```bash
-bash scripts/setup_gitee.sh   # 查看配置步骤
+# 1. 在 https://gitee.com/profile/personal_access_tokens 申请令牌（勾选 projects）
+# 2. 运行一键配置
+export GITEE_USERNAME=你的Gitee用户名
+export GITEE_TOKEN=你的令牌
+export GITHUB_TOKEN=ghp_xxxx   # 可选，自动写入 GitHub Secrets
+bash scripts/setup_gitee.sh
 ```
+
+或分步：`python3 scripts/configure_gitee.py`
 
 配置完成后，国内访问地址：
 
 ```
 https://你的Gitee用户名.gitee.io/beijing-soe-jobs/
 ```
+
+若首次打开 404，到 Gitee 仓库 → **服务 → Gitee Pages** → 分支选 `pages` → 启动。
 
 GitHub Actions 在 GitHub Pages 部署成功后会自动同步到 Gitee（需配置 Secrets）。
 
