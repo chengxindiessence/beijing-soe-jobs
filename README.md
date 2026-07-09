@@ -210,35 +210,45 @@ guopin_keywords:
 
 ## 六、定时任务配置（每日自动运行）
 
-### macOS — launchd（推荐）
+### macOS — launchd（推荐，一键安装）
 
-1. 编辑 `scripts/com.beijing.soe.jobs.plist`，将 `REPLACE_WITH_PROJECT_PATH` 替换为实际路径，例如：
+```bash
+cd ~/Projects/beijing-soe-jobs
+bash scripts/install_launchd.sh
+```
 
-   ```
-   /Users/essence/Projects/beijing-soe-jobs
-   ```
+安装后每天 **8:00** 自动运行爬虫，日志在 `logs/launchd.out.log`。
 
-2. 安装定时任务（每天 8:00 运行）：
+手动测试：
 
-   ```bash
-   # 替换路径后执行
-   sed "s|REPLACE_WITH_PROJECT_PATH|/Users/essence/Projects/beijing-soe-jobs|g" \
-     scripts/com.beijing.soe.jobs.plist > ~/Library/LaunchAgents/com.beijing.soe.jobs.plist
+```bash
+bash scripts/run_crawler.sh
+```
 
-   launchctl load ~/Library/LaunchAgents/com.beijing.soe.jobs.plist
-   ```
+卸载：
 
-3. 手动测试：
+```bash
+launchctl unload ~/Library/LaunchAgents/com.beijing.soe.jobs.plist
+```
 
-   ```bash
-   bash scripts/run_crawler.sh
-   ```
+**可选：爬完后自动推送到 GitHub**（让公网 Pages 也更新）：
 
-4. 卸载定时任务：
+编辑 `~/Library/LaunchAgents/com.beijing.soe.jobs.plist`，在 `ProgramArguments` 前加入：
 
-   ```bash
-   launchctl unload ~/Library/LaunchAgents/com.beijing.soe.jobs.plist
-   ```
+```xml
+<key>EnvironmentVariables</key>
+<dict>
+    <key>AUTO_PUSH</key>
+    <string>1</string>
+</dict>
+```
+
+然后 `launchctl unload` + `launchctl load` 重新加载。
+
+### macOS — launchd（手动安装）
+
+1. 编辑 `scripts/com.beijing.soe.jobs.plist`，将 `REPLACE_WITH_PROJECT_PATH` 替换为实际路径
+2. 复制到 LaunchAgents 并加载（见旧版步骤，或直接用上方一键脚本）
 
 ### macOS / Linux — crontab
 
@@ -303,9 +313,29 @@ git push -u origin main
 
 | 方式 | 说明 |
 |------|------|
-| **自动** | 每天北京时间 8:00 Actions 自动爬取并部署 |
+| **本机自动** | 已安装 launchd 后，每天 8:00 本地爬取 |
+| **GitHub 自动** | 每天北京时间 8:00 Actions 自动爬取并部署（新仓库 schedule 可能延迟 24h 首次触发） |
 | **手动一键** | Actions → Deploy to GitHub Pages → Run workflow |
+| **API 触发** | `export GITHUB_TOKEN=ghp_xxx && bash scripts/trigger_github_deploy.sh` |
 | **本地更新后推送** | `python main.py` → `git add web/job.json` → `git commit` → `git push` |
+
+> **schedule 未生效？** 仓库新建后 GitHub 定时任务可能延迟 1～2 天。可先用「手动一键」或 `scripts/trigger_github_deploy.sh` 触发；也可在 [cron-job.org](https://cron-job.org) 每天 8:05 调用 repository_dispatch API 作为备用。
+
+### 国内访问（Gitee Pages 备用）
+
+GitHub Pages（`*.github.io`）在国内经常打不开或极慢。可同步部署到 Gitee：
+
+```bash
+bash scripts/setup_gitee.sh   # 查看配置步骤
+```
+
+配置完成后，国内访问地址：
+
+```
+https://你的Gitee用户名.gitee.io/beijing-soe-jobs/
+```
+
+GitHub Actions 在 GitHub Pages 部署成功后会自动同步到 Gitee（需配置 Secrets）。
 
 ### 分享给别人
 
@@ -343,7 +373,13 @@ A: 部分央企官网有反爬或页面结构变化，可在 `config.yaml` 的 `
 A: 检查 `strict_mode` 是否过严；尝试设为 `false`。也可临时注释 `exclude_keywords` 排查。
 
 **Q: 网页显示加载失败？**  
-A: 必须先运行 `python main.py` 生成 `web/job.json`，再用 `python web/serve.py` 打开。
+A: 必须先运行 `python main.py` 生成 `web/job.json`，再用 `python web/serve.py` 打开。不要直接双击 HTML 文件。
+
+**Q: GitHub 公网链接打不开？**  
+A: `*.github.io` 在国内不稳定。请用本机 `http://localhost:8765`，或配置 Gitee Pages 备用（见第七节「国内访问」）。
+
+**Q: 为什么每天 8 点没有自动更新？**  
+A: 检查三项：① 本机是否运行了 `bash scripts/install_launchd.sh`；② GitHub Actions schedule 对新仓库可能延迟；③ 仅 `push` 不会跑爬虫，需 schedule / 手动 Run workflow / API 触发。
 
 **Q: 如何只看今日新增？**  
 A: 网页排序选「今日新增优先」，黄色行即为今日新抓到的岗位。
