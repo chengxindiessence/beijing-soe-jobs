@@ -49,13 +49,19 @@ def api(method: str, path: str, token: str, data: dict | None = None) -> dict | 
 
 
 def ensure_repo(username: str, token: str) -> None:
+    info = None
     try:
-        api("GET", f"/repos/{username}/{REPO_NAME}", token, {"access_token": token})
-        print(f"✓ Gitee 仓库已存在: {username}/{REPO_NAME}")
-        return
+        info = api("GET", f"/repos/{username}/{REPO_NAME}", token, {"access_token": token})
     except RuntimeError as exc:
         if "404" not in str(exc):
             raise
+    if info:
+        if info.get("private"):
+            print("⚠ 仓库当前为私有，Gitee Pages 无法对外分享")
+            print("  请先在 Gitee 完成账号安全设置（见脚本输出末尾说明），再将仓库改为公开")
+        else:
+            print(f"✓ Gitee 仓库已存在: {username}/{REPO_NAME}")
+        return
     api(
         "POST",
         "/user/repos",
@@ -224,9 +230,11 @@ def main() -> int:
     print(f"国内访问地址: {pages_url}")
     if not pages:
         print("")
-        print("⚠ 若打开 404，请一次性在网页启用 Gitee Pages:")
-        print(f"  https://gitee.com/{username}/{REPO_NAME}/pages")
-        print("  分支选 pages，目录 /，然后点启动")
+        print("⚠ 若 Pages 入口打不开或 404，请按顺序检查：")
+        print("  1. 绑定 GitHub/微信 或开启 2FA（Gitee → 头像 → 设置 → 帐号安全）")
+        print("  2. 仓库改为公开：进入仓库 → 管理 → 基本设置 → 开源 → 公开")
+        print("  3. 启用 Pages：进入仓库 → 服务 → Gitee Pages → 分支 pages → 启动")
+        print(f"     仓库地址: https://gitee.com/{username}/{REPO_NAME}")
     print("=" * 50)
     return 0
 

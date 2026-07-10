@@ -14,13 +14,15 @@ if [ -z "${GITEE_USERNAME:-}" ] || [ -z "${GITEE_TOKEN:-}" ]; then
   echo "  1. 注册 Gitee: https://gitee.com/signup"
   echo "  2. 申请令牌: https://gitee.com/profile/personal_access_tokens"
   echo "     勾选 projects 权限，复制生成的令牌"
-  echo "  3. 运行:"
+  echo "  3. 在终端运行（每行单独执行，行末不要加注释）:"
   echo ""
+  echo "     cd ~/Projects/beijing-soe-jobs"
   echo "     export GITEE_USERNAME=你的用户名"
   echo "     export GITEE_TOKEN=你的令牌"
-  echo "     export GITHUB_TOKEN=ghp_xxxx   # 可选，自动写入 GitHub Secrets"
-  echo "     python3 scripts/configure_gitee.py"
+  echo "     export GITHUB_TOKEN=ghp_xxxx"
+  echo "     bash scripts/setup_gitee.sh"
   echo ""
+  echo "  GITHUB_TOKEN 可选；不填则跳过 GitHub Secrets 自动写入。"
   exit 1
 fi
 

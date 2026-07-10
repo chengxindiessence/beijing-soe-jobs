@@ -1,0 +1,43 @@
+# 腾讯云 EdgeOne Pages 国内部署
+# 需在 GitHub Secrets 配置 EDGEONE_API_TOKEN
+
+name: Deploy to EdgeOne Pages
+
+on:
+  workflow_run:
+    workflows: ["Deploy to GitHub Pages"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "edgeone-pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy-edgeone:
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ensure job.json exists
+        run: test -f web/job.json || echo '{"last_updated":"","total":0,"new_today":0,"jobs":[]}' > web/job.json
+
+      - name: Deploy to EdgeOne Pages
+        env:
+          EDGEONE_API_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}
+        run: |
+          if [ -z "$EDGEONE_API_TOKEN" ]; then
+            echo "跳过：未配置 EDGEONE_API_TOKEN"
+            echo "运行 scripts/setup_edgeone.sh 查看配置步骤"
+            exit 0
+          fi
+          npx edgeone pages deploy ./web -n beijing-soe-jobs -t "$EDGEONE_API_TOKEN"
